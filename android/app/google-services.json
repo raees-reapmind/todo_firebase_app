@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "527581792984",
+    "project_id": "managementapp-5ef6c",
+    "storage_bucket": "managementapp-5ef6c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527581792984:android:b0016d49fb6b3a23df25ad",
+        "android_client_info": {
+          "package_name": "com.example.management_and_scheduling_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527581792984-nk5774ijjbmt8765gpr81gs4ml7gu65m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.management_and_scheduling_app",
+            "certificate_hash": "bfd51e24e31e0d89ed29d8943373b662f1d988dd"
+          }
+        },
+        {
+          "client_id": "527581792984-ve9bonfmpoc1vlbr6mqls9q15ukc16nq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlu8uJnnOnodOLALySJ2I9nJGptvIyVJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527581792984-ve9bonfmpoc1vlbr6mqls9q15ukc16nq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
