@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:management_and_scheduling_app/features/authentication/login/login_page.dart';
 import 'package:management_and_scheduling_app/features/splash_screen/splash_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,6 +8,7 @@ import 'package:management_and_scheduling_app/features/home/home_page.dart';
 import 'package:management_and_scheduling_app/features/onboarding/boost_productivity_screen.dart';
 
 import '../features/onboarding/stay_organised_screen.dart';
+import '../features/splash_screen/splash_bloc.dart';
 
 class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
@@ -45,7 +47,10 @@ class _AuthGateState extends State<AuthGate> {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-         return const SplashPage();
+          return BlocProvider(
+            create: (_) => SplashBloc()..add(SplashEvent()),
+            child: const SplashPage(),
+          );
         }
         if (snapshot.hasData) {
           return const HomePage();

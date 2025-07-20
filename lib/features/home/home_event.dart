@@ -27,3 +27,31 @@ class HomeTabChanged extends HomeEvent {
 }
 
 class HomeFetchTasks extends HomeEvent {}
+
+class HomeAddTask extends HomeEvent {
+  final String id;
+  final String title;
+  final String? description;
+  final String priority;
+  final DateTime date;
+  final String time;
+
+  HomeAddTask({
+    required this.id,
+    required this.title,
+    this.description,
+    required this.priority,
+    required this.date,
+    required this.time,
+  });
+
+  @override
+  List<Object?> get props => [id, title, description, priority, date, time];
+}
+
+class HomeDeleteTask extends HomeEvent {
+  final String id;
+  HomeDeleteTask(this.id);
+  @override
+  List<Object?> get props => [id];
+}
