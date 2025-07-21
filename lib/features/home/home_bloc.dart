@@ -59,18 +59,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           'date': event.date.toIso8601String(),
           'time': event.time,
           'createdAt': FieldValue.serverTimestamp(),
-        });
-        // Optionally, update the state or fetch tasks again
-        // emit(state.copyWith(...));
+        }); 
       } catch (e) {
-        // Optionally, emit an error state
         emit(state.copyWith(error: e.toString()));
       }
     });
     on<HomeDeleteTask>((event, emit) async {
       try {
         await FirebaseFirestore.instance.collection('todos').doc(event.id).delete();
-        add(HomeFetchTasks()); // Refresh the list after deletion
+        add(HomeFetchTasks()); 
       } catch (e) {
         emit(state.copyWith(error: e.toString()));
       }

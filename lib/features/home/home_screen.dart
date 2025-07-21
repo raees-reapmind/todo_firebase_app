@@ -772,7 +772,6 @@ class _HomeViewState extends State<_HomeView> {
                   SizedBox(
                   height: state.tasks.isEmpty ? 60 : 24,
                 ),
-                // Show either hooray image or the list of tasks
                 Expanded(
                   child: state.isLoading
                       ? Center(child: CircularProgressIndicator())
@@ -803,7 +802,6 @@ class _HomeViewState extends State<_HomeView> {
           floatingActionButton: Stack(
             alignment: Alignment.bottomRight,
             children: [
-              // Menu options (as before)
               if (_fabExpanded) ...[
                 Padding(
                   padding: const EdgeInsets.only(bottom: 80.0, right: 8.0),
@@ -828,48 +826,30 @@ class _HomeViewState extends State<_HomeView> {
               ],
               // The main FAB
               Padding(
-                padding: const EdgeInsets.only(bottom: 16.0, right: 8.0),
-                child: FloatingActionButton(
-                  backgroundColor: ColorCodes.orangeEB5E00,
-                  onPressed: () {
-                    setState(() {
-                      _fabExpanded = !_fabExpanded;
-                    });
-                  },
-                  child: Icon(_fabExpanded ? Icons.close : Icons.add,
-                      color: Colors.white),
+                padding: const EdgeInsets.only(bottom: 40.0, right: 8.0),
+                child: SizedBox(
+                  width: 48, 
+                  height: 48,  
+                  child: FloatingActionButton(
+                    backgroundColor: ColorCodes.orangeEB5E00,
+                    elevation: 0,
+                    shape: const CircleBorder(),
+                    onPressed: () {
+                      setState(() {
+                        _fabExpanded = !_fabExpanded;
+                      });
+                    },
+                    child: Icon(
+                      _fabExpanded ? Icons.close : Icons.add,
+                      color: Colors.white,
+                      size: 28,  
+                    ),
+                  ),
                 ),
               ),
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: 0,
-            selectedItemColor: Colors.orange,
-            unselectedItemColor: Colors.black38,
-            showUnselectedLabels: true,
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notifications_none),
-                label: 'Notification',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_today_outlined),
-                label: 'Calendar',
-              ),
-              BottomNavigationBarItem(
-                icon: CircleAvatar(
-                    radius: 12,
-                    backgroundColor: Colors.black26,
-                    child: Icon(Icons.person, color: Colors.white, size: 16)),
-                label: 'Profile',
-              ),
-            ],
-            onTap: (index) {},
-          ),
+         
         );
       },
     );
@@ -955,7 +935,6 @@ class _HomeTabButton extends StatelessWidget {
 }
 
 String _formatDate(DateTime date) {
-  // Example: Mon 20 March 2024
   final months = [
     'January',
     'February',
@@ -1142,7 +1121,6 @@ class _TimeSheetContentState extends State<_TimeSheetContent> {
                       padding: const EdgeInsets.only(left: 8),
                       child: ElevatedButton(
                         onPressed: () {
-                          // Confirm action
                           Navigator.pop(context, times[i]);
                         },
                         style: ElevatedButton.styleFrom(
@@ -1291,8 +1269,7 @@ Widget _buildTaskCard(BuildContext context, Map<String, dynamic> task) {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 surfaceTintColor: Colors.white,
                 onSelected: (value) {
-                  if (value == 'edit') {
-                    // TODO: Implement edit functionality
+                  if (value == 'edit') { 
                   } else if (value == 'delete') {
                     final bloc = BlocProvider.of<HomeBloc>(context);
                     bloc.add(HomeDeleteTask(task['id']));
@@ -1347,10 +1324,10 @@ Widget _buildTaskCard(BuildContext context, Map<String, dynamic> task) {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.blue.shade100,
+                      color: Colors.blue,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Text('To-Do', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 12)),
+                    child: const Text('To-Do', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12)),
                   ),
                 ],
               ),

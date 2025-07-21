@@ -24,7 +24,6 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              // Circle with icon
               Container(
                 width: 90,
                 height: 90,
@@ -34,12 +33,11 @@ class SplashScreen extends StatelessWidget {
                 ),
                 child: Center(
                   child: Image.asset(
-                    Images.splashLogo
+                    Images.splashLogo2
                   )
                 ),
               ),
               const SizedBox(width: 16),
-              // TO-DO Text
               Text(
                 'TO-DO',
                 style: GoogleFonts.inter(

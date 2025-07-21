@@ -4,7 +4,7 @@ class HomeState extends Equatable {
   final DateTime date;
   final String searchQuery;
   final int selectedTab;
-  final List<dynamic> tasks; // Replace dynamic with your Task model
+  final List<dynamic> tasks;  
   final bool isLoading;
   final String? error;
 

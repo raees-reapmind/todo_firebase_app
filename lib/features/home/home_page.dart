@@ -12,8 +12,7 @@ class HomePage extends StatelessWidget {
     return BlocProvider(
       create: (_) => HomeBloc(),
       child: BlocListener<HomeBloc, HomeState>(
-        listener: (context, state) {
-          // Handle login success, errors, etc. here if needed
+        listener: (context, state) { 
         },
         child: const HomeScreen(),
       ),

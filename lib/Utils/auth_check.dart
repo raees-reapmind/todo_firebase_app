@@ -9,6 +9,7 @@ import 'package:management_and_scheduling_app/features/onboarding/boost_producti
 
 import '../features/onboarding/stay_organised_screen.dart';
 import '../features/splash_screen/splash_bloc.dart';
+import '../Utils/bottom_nav.dart';
 
 class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
@@ -53,7 +54,7 @@ class _AuthGateState extends State<AuthGate> {
           );
         }
         if (snapshot.hasData) {
-          return const HomePage();
+          return const BottomNavBar();
         }
         return const LoginPage();
       },

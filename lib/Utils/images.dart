@@ -6,5 +6,7 @@ class Images {
   static const String loginPageTodoIcon = 'assets/images/todo_login_icon.png';  
   static const String googleIcon = 'assets/images/google.png';  
   static const String splashLogo = 'assets/images/splash_logo.png'; 
+  static const String splashLogo2 = 'assets/images/splash_logo_2.png'; 
+
   static const String hooray = 'assets/images/hooray.png'; 
 }
